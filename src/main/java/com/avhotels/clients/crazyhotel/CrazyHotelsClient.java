@@ -6,9 +6,12 @@ import com.avhotels.config.Endpoints;
 import com.avhotels.mapping.AvHotelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Optional;
 
 @Component
 public class CrazyHotelsClient extends BaseClient<CrazyHotelSearchRequest, CrazyHotelSearchResponse> {
@@ -28,7 +31,7 @@ public class CrazyHotelsClient extends BaseClient<CrazyHotelSearchRequest, Crazy
     @Override
     protected CrazyHotelSearchResponse findHotels(CrazyHotelSearchRequest crazyHotelSearchRequest) {
         if (crazyHotelSearchRequest == null) {
-            return new CrazyHotelSearchResponse();
+            return new EmptyResponse();
         }
         LOGGER.debug("searching for hotels in [" + endpoints.getCrazyHotelUrl() + "]");
 
@@ -40,11 +43,7 @@ public class CrazyHotelsClient extends BaseClient<CrazyHotelSearchRequest, Crazy
             return new EmptyResponse();
         }
 
-        if (searchResult.getBody() == null) {
-            return new EmptyResponse();
-        }
-
-        return searchResult.getBody();
+        return Optional.ofNullable(searchResult).map(HttpEntity::getBody).orElse(new EmptyResponse());
     }
 
     @Override

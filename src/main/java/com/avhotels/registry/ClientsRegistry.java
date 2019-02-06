@@ -6,7 +6,7 @@ import com.avhotels.clients.Client;
 import java.util.List;
 
 /**
- * A registry for third-party clients.
+ * A registry for third-party hotel provider clients.
  */
 public interface ClientsRegistry {
 

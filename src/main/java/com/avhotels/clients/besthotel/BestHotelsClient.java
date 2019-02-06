@@ -6,9 +6,12 @@ import com.avhotels.config.Endpoints;
 import com.avhotels.mapping.AvHotelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Optional;
 
 @Component
 public class BestHotelsClient extends BaseClient<BestHotelSearchRequest, BestHotelSearchResponse> {
@@ -27,7 +30,7 @@ public class BestHotelsClient extends BaseClient<BestHotelSearchRequest, BestHot
     @Override
     protected BestHotelSearchResponse findHotels(BestHotelSearchRequest bestHotelSearchRequest) {
         if (bestHotelSearchRequest == null) {
-            return new BestHotelSearchResponse();
+            return new EmptyResponse();
         }
         LOGGER.debug("searching for hotels in [" + endpoints.getBestHotelUrl() + "]");
 
@@ -39,10 +42,7 @@ public class BestHotelsClient extends BaseClient<BestHotelSearchRequest, BestHot
             return new EmptyResponse();
         }
 
-        if (searchResult.getBody() == null) {
-            return new EmptyResponse();
-        }
-        return searchResult.getBody();
+        return Optional.ofNullable(searchResult).map(HttpEntity::getBody).orElse(new EmptyResponse());
     }
 
     @Override
