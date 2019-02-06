@@ -10,11 +10,11 @@ import java.util.Date;
 
 public class HotelSearchRequest {
 
-//    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @FutureOrPresent
     private Date fromDate; //  ISO_LOCAL_DATE
 
-//    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Future
     private Date toDate; // ISO_LOCAL_DATE
 

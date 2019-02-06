@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HotelSearchResult {
+
     private List<Hotel> hotels = new ArrayList<>();
 
     public List<Hotel> getHotels() {

@@ -3,8 +3,11 @@ package com.avhotels.clients.besthotel;
 public class BestHotel {
 
     private String name;
+
     private short rate; // Number from 1-5
+
     private double price; // Total price rounded to 2 decimals
+
     private String roomAmenities; //String of amenities separated by comma
 
     public String getName() {
