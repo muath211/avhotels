@@ -9,13 +9,11 @@ Configure third party endpoints
 - navigate to yml config files "avhotels/src/main/resources/application-{profile}.yml"
   and configure your endpoints
   
-====================================
-====================================
+------------------------
 Dummy Hotel providers
 https://github.com/muath211/besthotels.git
 https://github.com/muath211/crazy.git
-====================================
-====================================
+------------------------
 
 Build (Maven must be installed)
 - mvn clean install
