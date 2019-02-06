@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: avhotels
+  profiles:
+    active: dev
+server:
+  port: 8080
+  servlet:
+    contextPath: /avhotels

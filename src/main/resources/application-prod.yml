@@ -1,0 +1,8 @@
+hotels:
+  best:
+    url: localhost:8082/best
+    name: BestHotels
+  crazy:
+    url: localhost:8081/crazy
+    name: CrazyHotels
+
