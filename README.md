@@ -29,4 +29,4 @@ Addtional hotel proviers can be added through implmeniting com.avhotels.clients.
 
 
 *********************************
-You may not find every class is docuemented in the project as I believe in Self-Documented code [https://en.wikipedia.org/wiki/Self-documenting_code]
+You may not find every class has documentation in the project as I believe in Self-Documented code [https://en.wikipedia.org/wiki/Self-documenting_code]
