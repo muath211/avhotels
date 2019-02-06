@@ -14,6 +14,8 @@ public class Hotel {
 
     private double fare;
 
+    private int rate;
+
     private List<String> amenities;
 
     @JsonIgnore
@@ -49,6 +51,14 @@ public class Hotel {
 
     public void setAmenities(List<String> amenities) {
         this.amenities = amenities;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public Map<String, Object> getAdditionalProperties() {

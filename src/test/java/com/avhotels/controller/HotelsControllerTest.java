@@ -64,7 +64,7 @@ public class HotelsControllerTest {
         HotelSearchRequest hotelSearchRequest = new HotelSearchRequest();
         hotelSearchRequest.setFromDate(Date.from(LocalDate.now().plusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant()));
         hotelSearchRequest.setToDate(Date.from(LocalDate.now().plusDays(20).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        hotelSearchRequest.setNumberOfAdults((short) 0);
+        hotelSearchRequest.setNumberOfAdults(0);
         hotelSearchRequest.setCity("AMM");
 
         post(hotelSearchRequest, 400);
@@ -75,7 +75,7 @@ public class HotelsControllerTest {
         HotelSearchRequest hotelSearchRequest = new HotelSearchRequest();
         hotelSearchRequest.setFromDate(Date.from(LocalDate.now().minusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant()));
         hotelSearchRequest.setToDate(Date.from(LocalDate.now().plusDays(20).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
         hotelSearchRequest.setCity("AMM");
 
         post(hotelSearchRequest, 400);
@@ -86,7 +86,7 @@ public class HotelsControllerTest {
         HotelSearchRequest hotelSearchRequest = new HotelSearchRequest();
         hotelSearchRequest.setFromDate(Date.from(LocalDate.now().plusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant()));
         hotelSearchRequest.setToDate(Date.from(LocalDate.now().minusDays(20).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
         hotelSearchRequest.setCity("AMM");
 
         post(hotelSearchRequest, 400);
@@ -97,7 +97,7 @@ public class HotelsControllerTest {
         HotelSearchRequest hotelSearchRequest = new HotelSearchRequest();
         hotelSearchRequest.setFromDate(Date.from(LocalDate.now().plusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant()));
         hotelSearchRequest.setToDate(Date.from(LocalDate.now().plusDays(20).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
         hotelSearchRequest.setCity("invalidcity");
 
         post(hotelSearchRequest, 400);
@@ -108,7 +108,7 @@ public class HotelsControllerTest {
         HotelSearchRequest hotelSearchRequest = new HotelSearchRequest();
         hotelSearchRequest.setFromDate(Date.from(LocalDate.now().plusDays(10).atStartOfDay(ZoneId.systemDefault()).toInstant()));
         hotelSearchRequest.setToDate(Date.from(LocalDate.now().plusDays(20).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
         hotelSearchRequest.setCity("AMM");
 
 

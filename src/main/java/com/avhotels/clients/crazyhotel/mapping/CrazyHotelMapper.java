@@ -2,8 +2,8 @@ package com.avhotels.clients.crazyhotel.mapping;
 
 import com.avhotels.clients.crazyhotel.AdditionalProperties;
 import com.avhotels.clients.crazyhotel.CrazyHotel;
-import com.avhotels.clients.crazyhotel.CrazyHotelSearchResponse;
 import com.avhotels.clients.crazyhotel.CrazyHotelSearchRequest;
+import com.avhotels.clients.crazyhotel.CrazyHotelSearchResponse;
 import com.avhotels.config.ClientsConfigurations;
 import com.avhotels.dto.HotelSearchRequest;
 import com.avhotels.mapping.AvHotelMapper;
@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -44,7 +45,7 @@ public class CrazyHotelMapper implements AvHotelMapper<CrazyHotelSearchRequest, 
 
     @Override
     public List<Hotel> mapResponse(CrazyHotelSearchRequest crazyHotelSearchRequest, CrazyHotelSearchResponse crazyHotelSearchResponse) {
-        if (crazyHotelSearchRequest ==  null || crazyHotelSearchResponse == null) {
+        if (crazyHotelSearchRequest == null || crazyHotelSearchResponse == null) {
             return new ArrayList<>();
         }
         LOGGER.debug("mapping request hotelSearchRequest [" + crazyHotelSearchResponse.toString() + "] ...");
@@ -57,6 +58,7 @@ public class CrazyHotelMapper implements AvHotelMapper<CrazyHotelSearchRequest, 
         hotel.setProvider(clientsConfigurations.getCrazyHotelsProvider());
         hotel.setName(crazyHotel.getName());
         hotel.setFare(crazyHotel.getPrice());
+        hotel.setRate(Optional.ofNullable(crazyHotel.getRate()).map(String::length).orElse(0));
         hotel.setAmenities(Arrays.asList(crazyHotel.getAmenities()));
         hotel.addAdditionalProperty(AdditionalProperties.RATE.key(), crazyHotel.getRate());
         hotel.addAdditionalProperty(AdditionalProperties.DISCOUNT.key(), crazyHotel.getDiscount());

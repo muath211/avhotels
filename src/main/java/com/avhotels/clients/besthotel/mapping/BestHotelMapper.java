@@ -70,6 +70,7 @@ public class BestHotelMapper implements AvHotelMapper<BestHotelSearchRequest, Be
         hotel.setName(bestHotel.getName());
         hotel.setFare(calculatePrice(bestHotel, stayPeriod));
         hotel.setAmenities(getAmenities(bestHotel));
+        hotel.setRate(bestHotel.getRate());
         hotel.addAdditionalProperty(AdditionalProperties.RATE.key(), bestHotel.getRate());
         return hotel;
     }

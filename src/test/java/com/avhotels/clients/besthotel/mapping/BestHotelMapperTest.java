@@ -41,7 +41,7 @@ public class BestHotelMapperTest {
         hotelSearchRequest.setCity("AMM");
         hotelSearchRequest.setFromDate(new Date());
         hotelSearchRequest.setToDate(new Date());
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
 
         BestHotelSearchRequest bestHotelSearchRequest = bestHotelMapper.mapRequest(hotelSearchRequest);
 
@@ -65,7 +65,7 @@ public class BestHotelMapperTest {
         BestHotel bestHotel = new BestHotel();
         bestHotel.setName("Sheraton");
         bestHotel.setPrice(34.3);
-        bestHotel.setRate((short) 3);
+        bestHotel.setRate(3);
         bestHotel.setRoomAmenities("Hair Dryer, Balcony");
 
         bestHotelSearchResponse.setHotels(Collections.singletonList(bestHotel));

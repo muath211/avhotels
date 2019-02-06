@@ -39,7 +39,7 @@ public class CrazyHotelMapperTest {
         hotelSearchRequest.setCity("AMM");
         hotelSearchRequest.setFromDate(new Date());
         hotelSearchRequest.setToDate(new Date());
-        hotelSearchRequest.setNumberOfAdults((short) 2);
+        hotelSearchRequest.setNumberOfAdults(2);
 
         CrazyHotelSearchRequest crazyHotelSearchRequest = crazyHotelMapper.mapRequest(hotelSearchRequest);
 
@@ -51,7 +51,7 @@ public class CrazyHotelMapperTest {
 
     @Test
     public void mapResponse_NullInput_EmptyResult() {
-        List<Hotel> hotels = crazyHotelMapper.mapResponse(null,null);
+        List<Hotel> hotels = crazyHotelMapper.mapResponse(null, null);
 
         assertNotNull(hotels);
         assertEquals(hotels.size(), 0);

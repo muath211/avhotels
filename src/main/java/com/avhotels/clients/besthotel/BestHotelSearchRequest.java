@@ -14,7 +14,7 @@ public class BestHotelSearchRequest {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date toDate; // ISO_LOCAL_DATE
 
-    private short numberOfAdults; // integer number
+    private int numberOfAdults; // integer number
 
     public String getCity() {
         return city;
@@ -28,7 +28,7 @@ public class BestHotelSearchRequest {
         return toDate;
     }
 
-    public short getNumberOfAdults() {
+    public int getNumberOfAdults() {
         return numberOfAdults;
     }
 
@@ -64,7 +64,7 @@ public class BestHotelSearchRequest {
             return this;
         }
 
-        public Builder numberOfAdults(short numberOfAdults) {
+        public Builder numberOfAdults(int numberOfAdults) {
             bestHotelSearchRequest.numberOfAdults = numberOfAdults;
             return this;
         }

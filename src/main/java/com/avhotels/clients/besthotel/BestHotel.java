@@ -4,7 +4,7 @@ public class BestHotel {
 
     private String name;
 
-    private short rate; // Number from 1-5
+    private int rate; // Number from 1-5
 
     private double price; // Total price rounded to 2 decimals
 
@@ -18,11 +18,11 @@ public class BestHotel {
         this.name = name;
     }
 
-    public short getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(short rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 

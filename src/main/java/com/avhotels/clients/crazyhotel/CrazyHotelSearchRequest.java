@@ -14,7 +14,7 @@ public class CrazyHotelSearchRequest {
     @JsonFormat(pattern = "yyyy-MM-dd'T'hh:mm:ss'Z'")
     private Date toDate; // ISO_INSTANT
 
-    private short adultsCount; // integer number
+    private int adultsCount; // integer number
 
     public String getCity() {
         return city;
@@ -28,7 +28,7 @@ public class CrazyHotelSearchRequest {
         return toDate;
     }
 
-    public short getAdultsCount() {
+    public int getAdultsCount() {
         return adultsCount;
     }
 
@@ -64,7 +64,7 @@ public class CrazyHotelSearchRequest {
             return this;
         }
 
-        public Builder adultsCount(short adultsCount) {
+        public Builder adultsCount(int adultsCount) {
             crazyHotelSearchRequest.adultsCount = adultsCount;
             return this;
         }

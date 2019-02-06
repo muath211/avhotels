@@ -22,7 +22,7 @@ public class HotelSearchRequest {
     private String city; //  IATA code (AUH)
 
     @Min(1)
-    private short numberOfAdults; // integer number
+    private int numberOfAdults; // integer number
 
     public Date getFromDate() {
         return fromDate;
@@ -48,11 +48,11 @@ public class HotelSearchRequest {
         this.city = city;
     }
 
-    public short getNumberOfAdults() {
+    public int getNumberOfAdults() {
         return numberOfAdults;
     }
 
-    public void setNumberOfAdults(short numberOfAdults) {
+    public void setNumberOfAdults(int numberOfAdults) {
         this.numberOfAdults = numberOfAdults;
     }
 

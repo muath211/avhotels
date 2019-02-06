@@ -71,7 +71,7 @@ public class BestHotelsClientTest {
         BestHotelSearchResponse expectedResponse = new BestHotelSearchResponse();
         BestHotel hotel = new BestHotel();
         hotel.setName("Crown Plaza");
-        hotel.setRate((short) 2);
+        hotel.setRate(2);
         hotel.setPrice(33.4);
         hotel.setRoomAmenities("Hair Dryer, Iron");
 
