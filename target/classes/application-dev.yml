@@ -1,8 +1,0 @@
-hotels:
-  best:
-    url: http://localhost:8082/best/BestHotels
-    name: BestHotels
-  crazy:
-    url: http://localhost:8081/crazy/CrazyHotels
-    name: CrazyHotels
-
