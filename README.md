@@ -2,9 +2,6 @@
 
 Setup:
 
-Clone project (git must be installed)
-- git clone "https://github.com/muath211/avhotels.git"
-
 Configure third party endpoints
 - navigate to yml config files "avhotels/src/main/resources/application-{profile}.yml"
   and configure your endpoints
