@@ -28,7 +28,7 @@ http://localhost:8080/avhotels/swagger-ui.html
 
 
 *********************************
-Addtional hotel proviers can be added through implmeniting client Interface.
+Addtional hotel proviers can be added through implmeniting com.avhotels.clients.Client Interface.
 
 
 *********************************
